@@ -1,6 +1,6 @@
 # Hello, World! - AMQP consumer app
 
-[![Build Status](https://drone.ujar.org/api/badges/ujar-org/basics-amqp-consuming-hello/status.svg?ref=refs/heads/main)](https://drone.ujar.org/ujar-org/basics-amqp-consuming-hello)
+[![Build Status](https://drone.ujar.org/api/badges/ujar-org/basics-amqp-consuming-hello/status.svg)](https://drone.ujar.org/ujar-org/basics-amqp-consuming-hello)
 
 Minimal Spring Boot based sample of AMQP consumer app.
 
