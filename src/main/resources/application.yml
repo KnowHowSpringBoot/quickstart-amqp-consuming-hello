@@ -1,0 +1,72 @@
+git :
+  commit : '@git.commit.id@'
+  build_time : '@git.build.time@'
+
+info :
+  app :
+    name : @project.name@
+    description : @project.description@
+    version : @project.version@
+    git_commit : ${git.commit}
+    build_time : ${git.build_time}
+
+spring :
+  application :
+    name : basics-amqp-consuming-hello
+  jackson :
+    default-property-inclusion : NON_NULL
+  lifecycle :
+    timeout-per-shutdown-phase : ${TIMEOUT_PER_SHUTDOWN:20s}
+  rabbitmq:
+    host: ${RABBIT_HOST:localhost}
+    port: ${RABBIT_PORT:5672}
+    username: ${RABBIT_USERNAME:sa_test}
+    password: ${RABBIT_PASSWORD:sa_test}
+  devtools :
+    add-properties : false
+    restart :
+      enabled : false
+    livereload :
+      enabled : false
+logging :
+  level :
+    ROOT : INFO
+  pattern :
+    console : "${spring.application.name} %clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr([%X{transactionId},%X{traceId:-},%X{spanId:-}]){blue}[%thread] %clr(%-5level) %clr(%logger{36}){magenta} - %msg%n"
+
+management :
+  server :
+    add-application-context-header : true
+  endpoints :
+    enabled-by-default : false
+    web :
+      path-mapping :
+        health : actuator/health
+        prometheus : metrics
+        info : info
+      base-path : /
+      exposure :
+        include : health, prometheus, info
+  endpoint :
+    health :
+      enabled : true
+      show-details : always
+    prometheus :
+      enabled : true
+    info :
+      enabled : true
+
+server :
+  port : ${SERVER_PORT:8080}
+  shutdown : graceful
+
+embedded :
+  rabbitmq :
+    enabled : false
+    reuse-container : true
+
+ujar :
+  amqp:
+    queues :
+      greeter-exchange: ${AMQP_GREETER_EXCHANGE:greeter-exchange}
+      greeter-queue: ${AMQP_GREETER_QUEUE:greeter-queue}
