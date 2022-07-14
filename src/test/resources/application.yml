@@ -2,10 +2,10 @@ spring :
   application :
     name : basics-amqp-consuming-hello
   rabbitmq:
-    host: ${RABBIT_HOST:${embedded.rabbitmq.host:localhost}}
-    port: ${RABBIT_PORT:${embedded.rabbitmq.port:5672}}
-    username: ${RABBIT_USERNAME:${embedded.rabbitmq.user:sa_test}}
-    password: ${RABBIT_PASSWORD:${embedded.rabbitmq.password:sa_test}}
+    host: ${RABBITMQ_HOST:${embedded.rabbitmq.host:localhost}}
+    port: ${RABBITMQ_PORT:${embedded.rabbitmq.port:5672}}
+    username: ${RABBITMQ_USERNAME:${embedded.rabbitmq.user:sa_test}}
+    password: ${RABBITMQ_PASSWORD:${embedded.rabbitmq.password:sa_test}}
   devtools :
     add-properties : false
     restart :
