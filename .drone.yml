@@ -22,7 +22,7 @@ steps:
       - name: m2cache
         path: /root/.m2
     environment :
-      RABBIT_HOST: rabbitmq
+      RABBITMQ_HOST: rabbitmq
       DEPLOYER_USERNAME :
         from_secret : DEPLOYER_USERNAME
       DEPLOYER_PASSWORD :
