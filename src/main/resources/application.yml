@@ -18,10 +18,10 @@ spring :
   lifecycle :
     timeout-per-shutdown-phase : ${TIMEOUT_PER_SHUTDOWN:20s}
   rabbitmq:
-    host: ${RABBIT_HOST:localhost}
-    port: ${RABBIT_PORT:5672}
-    username: ${RABBIT_USERNAME:sa_test}
-    password: ${RABBIT_PASSWORD:sa_test}
+    host: ${RABBITMQ_HOST:localhost}
+    port: ${RABBITMQ_PORT:5672}
+    username: ${RABBITMQ_USERNAME:sa_test}
+    password: ${RABBITMQ_PASSWORD:sa_test}
   devtools :
     add-properties : false
     restart :
