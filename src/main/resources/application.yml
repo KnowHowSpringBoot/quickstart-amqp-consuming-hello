@@ -5,9 +5,9 @@ git :
 
 info :
   app :
-    name : @project.name@
-    description : @project.description@
-    version : @project.version@
+    name : '@project.name@'
+    description : '@project.description@'
+    version : '@project.version@'
     git_commit : ${git.commit}
     build_time : ${git.build_time}
 
@@ -36,6 +36,9 @@ logging :
     console : "${spring.application.name} %clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr([%X{transactionId},%X{traceId:-},%X{spanId:-}]){blue}[%thread] %clr(%-5level) %clr(%logger{36}){magenta} - %msg%n"
 
 management :
+  info :
+    env :
+      enabled : true
   server :
     add-application-context-header : true
   endpoints :
