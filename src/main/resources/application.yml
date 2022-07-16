@@ -1,3 +1,8 @@
+build:
+  version: @project.version@
+  description: @project.description@
+  relativePath: ${SWAGGER_RELATIVE_PATH:}
+
 git :
   commit : '@git.commit.id@'
   build_time : '@git.build.time@'
