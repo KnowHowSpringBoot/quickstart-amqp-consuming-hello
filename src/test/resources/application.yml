@@ -1,3 +1,8 @@
+build :
+  description : '@project.description@'
+  relative-path : ''
+  version : '@project.version@'
+
 spring :
   application :
     name : basics-amqp-consuming-hello
