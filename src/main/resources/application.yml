@@ -1,3 +1,7 @@
+build :
+  description : '@project.description@'
+  relative-path : ${SWAGGER_RELATIVE_PATH:}
+  version : '@project.version@'
 
 git :
   commit : '@git.commit.id@'
