@@ -53,6 +53,8 @@ management :
     health :
       enabled : true
       show-details : always
+      probes :
+        enabled : true
     prometheus :
       enabled : true
     info :
