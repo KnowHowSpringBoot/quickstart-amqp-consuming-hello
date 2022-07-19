@@ -22,11 +22,11 @@ spring :
     default-property-inclusion : NON_NULL
   lifecycle :
     timeout-per-shutdown-phase : ${TIMEOUT_PER_SHUTDOWN:20s}
-  rabbitmq:
-    host: ${RABBITMQ_HOST:localhost}
-    port: ${RABBITMQ_PORT:5672}
-    username: ${RABBITMQ_USERNAME:sa_test}
-    password: ${RABBITMQ_PASSWORD:sa_test}
+  rabbitmq :
+    host : ${RABBITMQ_HOST:localhost}
+    port : ${RABBITMQ_PORT:5672}
+    username : ${RABBITMQ_USERNAME:sa_test}
+    password : ${RABBITMQ_PASSWORD:sa_test}
   devtools :
     add-properties : false
     restart :
@@ -41,6 +41,11 @@ logging :
 management :
   info :
     env :
+      enabled : true
+  health :
+    livenessstate :
+      enabled : true
+    readinessstate :
       enabled : true
   server :
     add-application-context-header : true
@@ -70,7 +75,7 @@ embedded :
     reuse-container : true
 
 ujar :
-  amqp:
+  amqp :
     queues :
-      greeter-exchange: ${AMQP_GREETER_EXCHANGE:greeter-exchange}
-      greeter-queue: ${AMQP_GREETER_QUEUE:greeter-queue}
+      greeter-exchange : ${AMQP_GREETER_EXCHANGE:greeter-exchange}
+      greeter-queue : ${AMQP_GREETER_QUEUE:greeter-queue}
