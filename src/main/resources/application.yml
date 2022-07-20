@@ -1,6 +1,6 @@
 build :
   description : '@project.description@'
-  relative-path : ${SWAGGER_RELATIVE_PATH:}
+  relative-path : ${SWAGGER_UI_RELATIVE_PATH:}
   version : '@project.version@'
 
 git :
@@ -53,7 +53,7 @@ management :
     enabled-by-default : false
     web :
       exposure :
-        include : health, prometheus, info
+        include : health, prometheus, info, openapi, swagger-ui
   endpoint :
     health :
       enabled : true
@@ -79,3 +79,9 @@ ujar :
     queues :
       greeter-exchange : ${AMQP_GREETER_EXCHANGE:greeter-exchange}
       greeter-queue : ${AMQP_GREETER_QUEUE:greeter-queue}
+
+springdoc :
+  show-actuator : true
+  swagger-ui :
+    config-url : ${SWAGGER_UI_RELATIVE_PATH:/}v3/api-docs/swagger-config
+    url : ${SWAGGER_UI_RELATIVE_PATH:/}v3/api-docs
