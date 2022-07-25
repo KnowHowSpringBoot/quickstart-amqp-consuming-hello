@@ -43,7 +43,7 @@ java -jar target/*.jar
 
 ## Code conventions
 
-The code follows [Google Code Conventions](https://google.github.io/styleguide/javaguide.html) without exceptions. Code
+The code follows [Google Code Conventions](https://google.github.io/styleguide/javaguide.html). Code
 quality is measured by:
 
 - [Sonarqube](https://sonarqube.ujar.org/dashboard?id=ujar-org%3Abasics-amqp-consuming-hello)
