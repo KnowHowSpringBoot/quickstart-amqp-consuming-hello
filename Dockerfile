@@ -1,7 +1,5 @@
 FROM docker-registry.ujar.org/ujar/openjdk:17.0.2-slim
 
-RUN apt update && apt install -y unzip curl mc netcat iputils-ping less vim nano wget
-
 WORKDIR /app
 
 COPY ./target/*.jar /app/app.jar
