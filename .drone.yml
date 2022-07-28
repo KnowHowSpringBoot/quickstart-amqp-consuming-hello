@@ -1,28 +1,28 @@
-kind: pipeline
-name: CI
+kind : pipeline
+name : CI
 type : docker
 
-trigger:
-  branch:
+trigger :
+  branch :
     - main
     - develop
     - feature/*
-  event:
+  event :
     - push
 
-volumes:
-  - name: m2cache
-    host:
-      path: /volume1/m2cache
-steps:
+volumes :
+  - name : m2cache
+    host :
+      path : /volume1/m2cache
+steps :
 
-  - name: build
-    image: maven:3-openjdk-17-slim
-    volumes:
-      - name: m2cache
-        path: /root/.m2
+  - name : build
+    image : docker-registry.ujar.org/ujar/maven:3-openjdk-17-slim
+    volumes :
+      - name : m2cache
+        path : /root/.m2
     environment :
-      RABBITMQ_HOST: rabbitmq
+      RABBITMQ_HOST : rabbitmq
       DEPLOYER_USERNAME :
         from_secret : DEPLOYER_USERNAME
       DEPLOYER_PASSWORD :
@@ -31,82 +31,82 @@ steps:
         from_secret : SONAR_HOST
       SONAR_TOKEN :
         from_secret : SONAR_TOKEN
-    commands:
-      - mvn clean compile test-compile -P default -B  --file pom.xml -s settings.xml -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD
-      - mvn pmd:check -P default -B --file pom.xml -s settings.xml -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD
-      - mvn com.github.spotbugs:spotbugs-maven-plugin:check -P default -Dspotbugs.xmlOutput=true -Dspotbugs.failOnError=true -Dspotbugs.includeTests=true  --file pom.xml -s settings.xml -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD
-      - mvn org.jacoco:jacoco-maven-plugin:prepare-agent package org.jacoco:jacoco-maven-plugin:report sonar:sonar -P default -Dsonar.host.url=$SONAR_HOST -Dsonar.login=$SONAR_TOKEN -Dsonar.projectKey=ujar-org:basics-amqp-consuming-hello -Dsonar.projectName=ujar-org:basics-amqp-consuming-hello --batch-mode  --file pom.xml -s settings.xml -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD
-    when:
-      branch:
-        include:
+    commands :
+      - mvn clean compile test-compile -P default -B  --file pom.xml -s ../maven-settings.xml -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD
+      - mvn pmd:check -P default -B --file pom.xml -s ../maven-settings.xml -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD
+      - mvn com.github.spotbugs:spotbugs-maven-plugin:check -P default -Dspotbugs.xmlOutput=true -Dspotbugs.failOnError=true -Dspotbugs.includeTests=true  --file pom.xml -s ../maven-settings.xml -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD
+      - mvn org.jacoco:jacoco-maven-plugin:prepare-agent package org.jacoco:jacoco-maven-plugin:report sonar:sonar -P default -Dsonar.host.url=$SONAR_HOST -Dsonar.login=$SONAR_TOKEN -Dsonar.projectKey=ujar-org:basics-amqp-consuming-hello -Dsonar.projectName=ujar-org:basics-amqp-consuming-hello --batch-mode  --file pom.xml -s ../maven-settings.xml -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD
+    when :
+      branch :
+        include :
           - feature/*
           - develop
           - main
 
-  - name: publish-snapshot-package
+  - name : publish-snapshot-package
     depends_on :
       - build
-    image: maven:3-openjdk-17-slim
-    volumes:
-      - name: m2cache
-        path: /root/.m2
+    image : docker-registry.ujar.org/ujar/maven:3-openjdk-17-slim
+    volumes :
+      - name : m2cache
+        path : /root/.m2
     environment :
       DEPLOYER_USERNAME :
         from_secret : DEPLOYER_USERNAME
       DEPLOYER_PASSWORD :
         from_secret : DEPLOYER_PASSWORD
-    commands:
-      - mvn deploy -P default -DskipTests=true -Dcheckstyle.skip=true -s settings.xml -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD
-    when:
-      branch:
-        include:
+    commands :
+      - mvn deploy -P default -DskipTests=true -Dcheckstyle.skip=true -s ../maven-settings.xml -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD
+    when :
+      branch :
+        include :
           - feature/*
           - develop
           - main
 
-  - name: publish-release-package
+  - name : publish-release-package
     depends_on :
       - build
-    image: maven:3-openjdk-17-slim
-    volumes:
-      - name: m2cache
-        path: /root/.m2
+    image : docker-registry.ujar.org/ujar/maven:3-openjdk-17-slim
+    volumes :
+      - name : m2cache
+        path : /root/.m2
     environment :
       DEPLOYER_USERNAME :
         from_secret : DEPLOYER_USERNAME
       DEPLOYER_PASSWORD :
         from_secret : DEPLOYER_PASSWORD
-    commands:
-      - mvn deploy -P default -DskipTests=true -Dcheckstyle.skip=true -s settings.xml -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD
-    when:
-      event: tag
+    commands :
+      - mvn deploy -P default -DskipTests=true -Dcheckstyle.skip=true -s ../maven-settings.xml -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD
+    when :
+      event : tag
 
-  - name: docker-build-dev-image
+  - name : docker-build-dev-image
     depends_on :
       - publish-snapshot-package
-    image: plugins/docker
-    settings:
-      dockerfile: Dockerfile
-      context: ./
-      storage_driver: vfs
-      username:
-        from_secret: DOCKER_USERNAME
-      password:
-        from_secret: DOCKER_PASSWORD
-      repo: docker-registry.ujar.org/ujar/basics-amqp-consuming-hello
-      registry: docker-registry.ujar.org
+    image : plugins/docker
+    settings :
+      dockerfile : Dockerfile
+      context : ./
+      storage_driver : vfs
+      username :
+        from_secret : DOCKER_USERNAME
+      password :
+        from_secret : DOCKER_PASSWORD
+      repo : docker-registry.ujar.org/ujar/basics-amqp-consuming-hello
+      registry : docker-registry.ujar.org
       tags :
         - latest
-    when:
-      branch:
-        include:
+    when :
+      branch :
+        include :
           - feature/*
           - develop
           - main
 
-services:
-  - name: rabbitmq
+services :
+  - name : rabbitmq
     image : rabbitmq:3.8-management-alpine
     environment :
-       RABBITMQ_DEFAULT_USER: sa_test
-       RABBITMQ_DEFAULT_PASS: sa_test
+      RABBITMQ_DEFAULT_USER : sa_test
+      RABBITMQ_DEFAULT_PASS : sa_test
