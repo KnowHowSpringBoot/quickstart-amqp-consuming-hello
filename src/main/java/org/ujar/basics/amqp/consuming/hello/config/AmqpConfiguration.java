@@ -14,7 +14,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @RequiredArgsConstructor
-public class AmqpConfiguration {
+class AmqpConfiguration {
 
   private final AmqpQueuesProperties queues;
 
@@ -40,7 +40,7 @@ public class AmqpConfiguration {
   }
 
   @Bean
-  public Declarables topicBindings(Queue greeterQueue, TopicExchange greeterTopicExchange) {
+  Declarables topicBindings(Queue greeterQueue, TopicExchange greeterTopicExchange) {
     return new Declarables(
         greeterQueue,
         greeterTopicExchange,
