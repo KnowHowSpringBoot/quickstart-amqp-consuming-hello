@@ -7,5 +7,5 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @Configuration
 @EnableScheduling
 @EnableConfigurationProperties({AmqpQueuesProperties.class})
-public class ApplicationConfig {
+class ApplicationConfig {
 }
