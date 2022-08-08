@@ -8,7 +8,7 @@ import org.springframework.validation.annotation.Validated;
 @Validated
 @ConstructorBinding
 @ConfigurationProperties(prefix = "ujar.amqp.queues")
-public record AmqpQueuesProperties (@NonNull String greeterExchange, @NonNull String greeterQueue) {
+public record AmqpQueuesProperties(@NonNull String greeterExchange, @NonNull String greeterQueue) {
 
   public String getGreeterExchange() {
     return greeterExchange();
