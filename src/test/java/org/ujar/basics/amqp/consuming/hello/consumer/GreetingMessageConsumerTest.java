@@ -26,7 +26,7 @@ class GreetingMessageConsumerTest {
 
   @Test
   void shouldConsumeMessage() throws InterruptedException {
-    var greeting = new Greeting("Hello, World!");
+    final var greeting = new Greeting("Hello, World!");
     producer.send(greeting);
 
     boolean messageConsumed = consumer.getLatch().await(10, TimeUnit.SECONDS);
