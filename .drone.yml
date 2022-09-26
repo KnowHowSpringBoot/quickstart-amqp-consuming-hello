@@ -109,7 +109,7 @@ steps :
 
 services :
   - name : rabbitmq
-    image : rabbitmq:3.8-management-alpine
+    image : rabbitmq:3.9-management-alpine
     environment :
       RABBITMQ_DEFAULT_USER : sa_test
       RABBITMQ_DEFAULT_PASS : sa_test
