@@ -3,7 +3,7 @@ version : '3.8'
 services :
   rabbitmq :
     container_name : basics-amqp-dev-consuming-hello-rabbitmq
-    image : rabbitmq:3.8-management-alpine
+    image : rabbitmq:3.9-management-alpine
     restart : unless-stopped
     environment :
       - RABBITMQ_DEFAULT_USER=sa_test
@@ -15,7 +15,7 @@ services :
       - '15672:15672'
   prometheus :
     container_name : basics-amqp-dev-consuming-hello-prometheus
-    image : prom/prometheus:v2.32.1
+    image : prom/prometheus:v2.37.1
     volumes :
       - ./docker/prometheus/:/etc/prometheus/
     command :
@@ -25,7 +25,7 @@ services :
     network_mode : 'host' # to test locally running service
   grafana :
     container_name : basics-amqp-dev-consuming-hello-grafana
-    image : grafana/grafana:8.3.3
+    image : grafana/grafana:8.5.13
     volumes :
       - ./docker/grafana/provisioning/:/etc/grafana/provisioning/
     environment :
