@@ -1,7 +1,7 @@
 # Hello, World! - AMQP consumer app
 
-[![Build Status](https://drone.ujar.org/api/badges/ujar-org/basics-amqp-consuming-hello/status.svg)](https://drone.ujar.org/ujar-org/basics-amqp-consuming-hello)
-[![Quality Gate Status](https://sonarqube.ujar.org/api/project_badges/measure?project=ujar-org%3Abasics-amqp-consuming-hello&metric=alert_status&token=02217f23c2c84eb94473d39b0e1aad6db816fc8b)](https://sonarqube.ujar.org/dashboard?id=ujar-org%3Abasics-amqp-consuming-hello)
+[![Build Status](https://drone.c2a2.com/api/badges/ujar-org/basics-amqp-consuming-hello/status.svg)](https://drone.c2a2.com/ujar-org/basics-amqp-consuming-hello)
+[![Quality Gate Status](https://sonarqube.c2a2.com/api/project_badges/measure?project=ujar-org%3Abasics-amqp-consuming-hello&metric=alert_status&token=02217f23c2c84eb94473d39b0e1aad6db816fc8b)](https://sonarqube.c2a2.com/dashboard?id=ujar-org%3Abasics-amqp-consuming-hello)
 
 Minimal Spring Boot based sample of AMQP consumer app.
 
@@ -46,7 +46,7 @@ java -jar target/*.jar
 The code follows [Google Code Conventions](https://google.github.io/styleguide/javaguide.html). Code
 quality is measured by:
 
-- [Sonarqube](https://sonarqube.ujar.org/dashboard?id=ujar-org%3Abasics-amqp-consuming-hello)
+- [Sonarqube](https://sonarqube.c2a2.com/dashboard?id=ujar-org%3Abasics-amqp-consuming-hello)
 - [PMD](https://pmd.github.io/)
 - [CheckStyle](https://checkstyle.sourceforge.io/)
 - [SpotBugs](https://spotbugs.github.io/)
