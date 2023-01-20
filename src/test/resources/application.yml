@@ -6,11 +6,11 @@ build :
 spring :
   application :
     name : bs-msg-amqp-consuming-hello
-  rabbitmq:
-    host: ${RABBITMQ_HOST:${embedded.rabbitmq.host:localhost}}
-    port: ${RABBITMQ_PORT:${embedded.rabbitmq.port:5672}}
-    username: ${RABBITMQ_USERNAME:${embedded.rabbitmq.user:sa_test}}
-    password: ${RABBITMQ_PASSWORD:${embedded.rabbitmq.password:sa_test}}
+  rabbitmq :
+    host : ${RABBITMQ_HOST:${embedded.rabbitmq.host:localhost}}
+    port : ${RABBITMQ_PORT:${embedded.rabbitmq.port:5672}}
+    username : ${RABBITMQ_USERNAME:${embedded.rabbitmq.user:sa_test}}
+    password : ${RABBITMQ_PASSWORD:${embedded.rabbitmq.password:sa_test}}
   devtools :
     add-properties : false
     restart :
@@ -24,7 +24,7 @@ embedded :
     reuse-container : true
 
 ujar :
-  amqp:
+  amqp :
     queues :
-      greeter-exchange: greeter-exchange
-      greeter-queue: greeter-queue
+      greeter-exchange : greeter-exchange
+      greeter-queue : greeter-queue
