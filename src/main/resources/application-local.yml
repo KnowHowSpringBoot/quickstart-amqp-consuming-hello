@@ -1,4 +1,4 @@
-spring:
+spring :
   devtools :
     add-properties : true
     restart :
@@ -10,7 +10,7 @@ management :
     enabled-by-default : true
 
 ujar :
-  amqp:
+  amqp :
     queues :
-      greeter-exchange: greeter-exchange
-      greeter-queue: greeter-queue
+      greeter-exchange : greeter-exchange
+      greeter-queue : greeter-queue
