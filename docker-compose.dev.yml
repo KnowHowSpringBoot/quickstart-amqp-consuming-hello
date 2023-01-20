@@ -2,7 +2,7 @@
 version : '3.8'
 services :
   rabbitmq :
-    container_name : basics-amqp-dev-consuming-hello-rabbitmq
+    container_name : bs-msg-amqp-dev-consuming-hello-rabbitmq
     image : rabbitmq:3.9-management-alpine
     restart : unless-stopped
     environment :
@@ -14,7 +14,7 @@ services :
       # HTTP management UI
       - '15672:15672'
   prometheus :
-    container_name : basics-amqp-dev-consuming-hello-prometheus
+    container_name : bs-msg-amqp-dev-consuming-hello-prometheus
     image : prom/prometheus:v2.37.1
     volumes :
       - ./docker/prometheus/:/etc/prometheus/
@@ -24,7 +24,7 @@ services :
     # docker/grafana/provisioning/datasources/datasource.yml
     network_mode : 'host' # to test locally running service
   grafana :
-    container_name : basics-amqp-dev-consuming-hello-grafana
+    container_name : bs-msg-amqp-dev-consuming-hello-grafana
     image : grafana/grafana:8.5.13
     volumes :
       - ./docker/grafana/provisioning/:/etc/grafana/provisioning/

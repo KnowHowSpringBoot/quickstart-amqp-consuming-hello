@@ -1,4 +1,4 @@
-package org.ujar.basics.amqp.consuming.hello;
+package org.ujar.bs.msg.amqp.consuming.hello;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

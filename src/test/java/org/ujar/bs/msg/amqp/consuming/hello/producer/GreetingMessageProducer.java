@@ -1,12 +1,12 @@
-package org.ujar.basics.amqp.consuming.hello.producer;
+package org.ujar.bs.msg.amqp.consuming.hello.producer;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.stereotype.Component;
-import org.ujar.basics.amqp.consuming.hello.config.AmqpQueuesProperties;
-import org.ujar.basics.amqp.consuming.hello.model.Greeting;
+import org.ujar.bs.msg.amqp.consuming.hello.config.AmqpQueuesProperties;
+import org.ujar.bs.msg.amqp.consuming.hello.model.Greeting;
 
 @Component
 @Slf4j

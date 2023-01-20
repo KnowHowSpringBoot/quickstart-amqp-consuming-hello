@@ -1,4 +1,4 @@
-package org.ujar.basics.amqp.consuming.hello.archunit;
+package org.ujar.bs.msg.amqp.consuming.hello.archunit;
 
 import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.fields;
 import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.noClasses;
@@ -18,7 +18,7 @@ import com.tngtech.archunit.lang.ArchRule;
 import com.tngtech.archunit.lang.CompositeArchRule;
 import org.slf4j.Logger;
 
-@AnalyzeClasses(packages = "org.ujar.basics.amqp.consuming.hello")
+@AnalyzeClasses(packages = "org.ujar.bs.msg.amqp.consuming.hello")
 class CodingRulesTest {
   @ArchTest
   private final ArchRule noClassesShouldAccessStandardStreams = NO_CLASSES_SHOULD_ACCESS_STANDARD_STREAMS;
