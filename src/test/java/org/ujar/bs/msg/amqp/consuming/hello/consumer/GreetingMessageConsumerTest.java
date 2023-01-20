@@ -1,4 +1,4 @@
-package org.ujar.basics.amqp.consuming.hello.consumer;
+package org.ujar.bs.msg.amqp.consuming.hello.consumer;
 
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -9,8 +9,8 @@ import org.hamcrest.MatcherAssert;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.ujar.basics.amqp.consuming.hello.model.Greeting;
-import org.ujar.basics.amqp.consuming.hello.producer.GreetingMessageProducer;
+import org.ujar.bs.msg.amqp.consuming.hello.model.Greeting;
+import org.ujar.bs.msg.amqp.consuming.hello.producer.GreetingMessageProducer;
 
 @SpringBootTest
 class GreetingMessageConsumerTest {

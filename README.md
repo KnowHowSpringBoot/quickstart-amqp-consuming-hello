@@ -1,7 +1,7 @@
 # Hello, World! - AMQP consumer app
 
-[![Build Status](https://drone.c2a2.com/api/badges/ujar-org/basics-amqp-consuming-hello/status.svg)](https://drone.c2a2.com/ujar-org/basics-amqp-consuming-hello)
-[![Quality Gate Status](https://sonarqube.c2a2.com/api/project_badges/measure?project=ujar-org%3Abasics-amqp-consuming-hello&metric=alert_status&token=02217f23c2c84eb94473d39b0e1aad6db816fc8b)](https://sonarqube.c2a2.com/dashboard?id=ujar-org%3Abasics-amqp-consuming-hello)
+[![Build Status](https://drone.c2a2.com/api/badges/ujar-org/bs-msg-amqp-consuming-hello/status.svg)](https://drone.c2a2.com/ujar-org/bs-msg-amqp-consuming-hello)
+[![Quality Gate Status](https://sonarqube.c2a2.com/api/project_badges/measure?project=ujar-org%3Abs-msg-amqp-consuming-hello&metric=alert_status&token=02217f23c2c84eb94473d39b0e1aad6db816fc8b)](https://sonarqube.c2a2.com/dashboard?id=ujar-org%3Abs-msg-amqp-consuming-hello)
 
 Minimal Spring Boot based sample of AMQP consumer app.
 
@@ -11,9 +11,9 @@ Minimal Spring Boot based sample of AMQP consumer app.
 - Clone source code to the local machine:
 
 ```
-git clone https://github.com/ujar-org/basics-amqp-consuming-hello.git
+git clone https://github.com/ujar-org/bs-msg-amqp-consuming-hello.git
 
-cd basics-amqp-consuming-hello
+cd bs-msg-amqp-consuming-hello
 ```
 
 - Install Docker [https://docs.docker.com/get-docker/](https://docs.docker.com/get-docker/) - at least 1.6.0
@@ -46,7 +46,7 @@ java -jar target/*.jar
 The code follows [Google Code Conventions](https://google.github.io/styleguide/javaguide.html). Code
 quality is measured by:
 
-- [Sonarqube](https://sonarqube.c2a2.com/dashboard?id=ujar-org%3Abasics-amqp-consuming-hello)
+- [Sonarqube](https://sonarqube.c2a2.com/dashboard?id=ujar-org%3Abs-msg-amqp-consuming-hello)
 - [PMD](https://pmd.github.io/)
 - [CheckStyle](https://checkstyle.sourceforge.io/)
 - [SpotBugs](https://spotbugs.github.io/)

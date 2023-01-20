@@ -17,7 +17,7 @@ info :
 
 spring :
   application :
-    name : basics-amqp-consuming-hello
+    name : bs-msg-amqp-consuming-hello
   jackson :
     default-property-inclusion : NON_NULL
   lifecycle :
