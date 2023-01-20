@@ -5,7 +5,7 @@ build :
 
 spring :
   application :
-    name : basics-amqp-consuming-hello
+    name : bs-msg-amqp-consuming-hello
   rabbitmq:
     host: ${RABBITMQ_HOST:${embedded.rabbitmq.host:localhost}}
     port: ${RABBITMQ_PORT:${embedded.rabbitmq.port:5672}}

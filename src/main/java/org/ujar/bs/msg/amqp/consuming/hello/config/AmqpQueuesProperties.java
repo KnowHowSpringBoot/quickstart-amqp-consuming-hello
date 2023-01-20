@@ -1,4 +1,4 @@
-package org.ujar.basics.amqp.consuming.hello.config;
+package org.ujar.bs.msg.amqp.consuming.hello.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.ConstructorBinding;
