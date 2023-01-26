@@ -1,6 +1,6 @@
 # Hello, World! - AMQP consumer app
 
-[![Build Status](https://drone.c2a2.com/api/badges/ujar-org/bs-msg-amqp-consuming-hello/status.svg)](https://drone.c2a2.com/ujar-org/bs-msg-amqp-consuming-hello)
+[![Build Status](http://iaolg9igjr3tghootxslfe.webrelay.io/api/badges/ujar-org/bs-msg-amqp-consuming-hello/status.svg)](http://iaolg9igjr3tghootxslfe.webrelay.io/ujar-org/bs-msg-amqp-consuming-hello)
 [![Quality Gate Status](https://sonarqube.c2a2.com/api/project_badges/measure?project=ujar-org%3Abs-msg-amqp-consuming-hello&metric=alert_status&token=02217f23c2c84eb94473d39b0e1aad6db816fc8b)](https://sonarqube.c2a2.com/dashboard?id=ujar-org%3Abs-msg-amqp-consuming-hello)
 
 Minimal Spring Boot based sample of AMQP consumer app.
