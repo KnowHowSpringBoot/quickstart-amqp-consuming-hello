@@ -4,7 +4,6 @@ type : docker
 
 trigger :
   branch :
-    - main
     - develop
     - feature/*
   event :
@@ -42,7 +41,6 @@ steps :
         include :
           - feature/*
           - develop
-          - main
 
   - name : publish-snapshot-package
     depends_on :
@@ -64,7 +62,6 @@ steps :
         include :
           - feature/*
           - develop
-          - main
 
   - name : publish-release-package
     depends_on :
@@ -105,7 +102,6 @@ steps :
         include :
           - feature/*
           - develop
-          - main
 
 services :
   - name : rabbitmq
