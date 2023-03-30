@@ -1,10 +1,5 @@
-build :
-  description : '@project.description@'
-  relative-path : ${SWAGGER_UI_RELATIVE_PATH:}
-  version : '@project.version@'
-
 git :
-  commit : '@git.commit.id@'
+  commit : '@git.commit.id.abbrev@'
   build_time : '@git.build.time@'
 
 info :
@@ -17,7 +12,7 @@ info :
 
 spring :
   application :
-    name : bs-msg-amqp-consuming-hello
+    name : quickstart-amqp-consuming-hello
   jackson :
     default-property-inclusion : NON_NULL
   lifecycle :
@@ -36,7 +31,6 @@ spring :
 logging :
   level :
     ROOT : ${LOGGING_LEVEL_ROOT:INFO}
-    org.zalando.logbook.Logbook : TRACE
 
 management :
   info :
@@ -53,16 +47,16 @@ management :
     enabled-by-default : false
     web :
       exposure :
-        include : health, prometheus, info, openapi, swagger-ui
+        include : health, prometheus, info
   endpoint :
     health :
       enabled : true
       show-details : always
       probes :
         enabled : true
-    prometheus :
-      enabled : true
     info :
+      enabled : true
+    prometheus :
       enabled : true
 
 server :
@@ -75,13 +69,11 @@ embedded :
     reuse-container : true
 
 ujar :
+  build :
+    description : '@project.description@'
+    relative-path : ${SWAGGER_UI_RELATIVE_PATH:}
+    version : '@project.version@'
   amqp :
     queues :
       greeter-exchange : ${AMQP_GREETER_EXCHANGE:greeter-exchange}
       greeter-queue : ${AMQP_GREETER_QUEUE:greeter-queue}
-
-springdoc :
-  show-actuator : true
-  swagger-ui :
-    config-url : ${SWAGGER_UI_RELATIVE_PATH:/}v3/api-docs/swagger-config
-    url : ${SWAGGER_UI_RELATIVE_PATH:/}v3/api-docs

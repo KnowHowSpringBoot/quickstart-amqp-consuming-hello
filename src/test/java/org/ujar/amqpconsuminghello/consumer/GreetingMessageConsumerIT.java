@@ -1,25 +1,26 @@
-package org.ujar.bs.msg.amqp.consuming.hello.consumer;
+package org.ujar.amqpconsuminghello.consumer;
 
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.hamcrest.CoreMatchers.containsString;
 
 import java.util.concurrent.TimeUnit;
+
 import org.hamcrest.MatcherAssert;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.ujar.bs.msg.amqp.consuming.hello.model.Greeting;
-import org.ujar.bs.msg.amqp.consuming.hello.producer.GreetingMessageProducer;
+import org.ujar.amqpconsuminghello.model.Greeting;
+import org.ujar.amqpconsuminghello.producer.GreetingMessageProducer;
 
 @SpringBootTest
-class GreetingMessageConsumerTest {
+class GreetingMessageConsumerIT {
 
   private final GreetingMessageProducer producer;
   private final GreetingMessageConsumer consumer;
 
   @Autowired
-  public GreetingMessageConsumerTest(GreetingMessageProducer producer, GreetingMessageConsumer consumer) {
+  public GreetingMessageConsumerIT(GreetingMessageProducer producer, GreetingMessageConsumer consumer) {
     this.producer = producer;
     this.consumer = consumer;
   }

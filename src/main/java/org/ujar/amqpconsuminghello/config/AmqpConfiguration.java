@@ -1,4 +1,4 @@
-package org.ujar.bs.msg.amqp.consuming.hello.config;
+package org.ujar.amqpconsuminghello.config;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.amqp.core.AmqpAdmin;

@@ -1,4 +1,4 @@
-package org.ujar.bs.msg.amqp.consuming.hello;
+package org.ujar.amqpconsuminghello;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
