@@ -1,11 +1,11 @@
-package org.ujar.bs.msg.amqp.consuming.hello;
+package org.ujar.amqpconsuminghello;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class AmqpConsumingHelloApplicationTest {
+class AmqpConsumingHelloApplicationIT {
 
   @Test
   void contextLoad() {

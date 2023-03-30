@@ -1,11 +1,6 @@
-build :
-  description : '@project.description@'
-  relative-path : ''
-  version : '@project.version@'
-
 spring :
   application :
-    name : bs-msg-amqp-consuming-hello
+    name : quickstart-amqp-consuming-hello
   rabbitmq :
     host : ${RABBITMQ_HOST:${embedded.rabbitmq.host:localhost}}
     port : ${RABBITMQ_PORT:${embedded.rabbitmq.port:5672}}
@@ -24,6 +19,10 @@ embedded :
     reuse-container : true
 
 ujar :
+  build :
+    description : '@project.description@'
+    relative-path : ''
+    version : '@project.version@'
   amqp :
     queues :
       greeter-exchange : greeter-exchange

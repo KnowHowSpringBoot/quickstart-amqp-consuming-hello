@@ -1,4 +1,4 @@
-package org.ujar.bs.msg.amqp.consuming.hello.config;
+package org.ujar.amqpconsuminghello.config;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.amqp.core.AcknowledgeMode;
@@ -7,7 +7,7 @@ import org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer;
 import org.springframework.amqp.rabbit.listener.adapter.MessageListenerAdapter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.ujar.bs.msg.amqp.consuming.hello.consumer.GreetingMessageConsumer;
+import org.ujar.amqpconsuminghello.consumer.GreetingMessageConsumer;
 
 @Configuration
 @RequiredArgsConstructor
