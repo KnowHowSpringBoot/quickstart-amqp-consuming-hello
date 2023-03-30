@@ -6,3 +6,4 @@ ${AnsiColor.GREEN}  \__,_|  \____/   \__,_| |_|
 ${AnsiColor.BLUE} ===============================
 ${AnsiColor.BLUE}  Sample of AMQP producer app
 ${AnsiColor.BLUE} ===============================
+${AnsiColor.BLACK}

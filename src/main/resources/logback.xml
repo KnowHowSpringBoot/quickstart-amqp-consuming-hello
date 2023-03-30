@@ -1,14 +1,16 @@
 <configuration>
-    <include resource="org/springframework/boot/logging/logback/defaults.xml" />
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
 
     <springProperty name="feature" source="spring.application.name"/>
     <springProperty name="application_name" source="spring.application.name"/>
 
-    <statusListener class="ch.qos.logback.core.status.OnConsoleStatusListener" />
+    <statusListener class="ch.qos.logback.core.status.OnConsoleStatusListener"/>
 
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
-            <pattern>${application_name} %clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr([%X{transactionId},%X{traceId:-},%X{spanId:-}]){blue}[%thread] %clr(%-5level) %clr(%logger{36}){magenta} - %msg%n</pattern>
+            <pattern>${application_name} %clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr([%X{transactionId},%X{traceId:-},%X{spanId:-}]){blue}[%thread] %clr(%-5level)
+                %clr(%logger{36}){magenta} - %msg%n
+            </pattern>
         </encoder>
     </appender>
 
@@ -50,6 +52,6 @@
         </encoder>
     </appender>
     <root level="INFO">
-        <appender-ref ref="${LOGBACK_APPENDER:-CONSOLE}" />
+        <appender-ref ref="${LOGBACK_APPENDER:-CONSOLE}"/>
     </root>
 </configuration>
