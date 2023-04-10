@@ -4,8 +4,8 @@ spring :
   rabbitmq :
     host : ${RABBITMQ_HOST:${embedded.rabbitmq.host:localhost}}
     port : ${RABBITMQ_PORT:${embedded.rabbitmq.port:5672}}
-    username : ${RABBITMQ_USERNAME:${embedded.rabbitmq.user:sa_test}}
-    password : ${RABBITMQ_PASSWORD:${embedded.rabbitmq.password:sa_test}}
+    username : ${RABBITMQ_USERNAME:${embedded.rabbitmq.user:svc_testing}}
+    password : ${RABBITMQ_PASSWORD:${embedded.rabbitmq.password:svc_testing}}
   devtools :
     add-properties : false
     restart :
