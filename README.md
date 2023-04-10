@@ -1,6 +1,6 @@
 # Hello, World! - AMQP consumer app
 
-Minimal Spring Boot based sample of AMQP consumer app.
+Minimal Spring Boot based sample AMQP consumer app.
 
 ### Pre-Requisites to run this example locally
 

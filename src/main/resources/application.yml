@@ -20,8 +20,8 @@ spring :
   rabbitmq :
     host : ${RABBITMQ_HOST:localhost}
     port : ${RABBITMQ_PORT:5672}
-    username : ${RABBITMQ_USERNAME:sa_test}
-    password : ${RABBITMQ_PASSWORD:sa_test}
+    username : ${RABBITMQ_USERNAME:svc_testing}
+    password : ${RABBITMQ_PASSWORD:svc_testing}
   devtools :
     add-properties : false
     restart :
