@@ -2,10 +2,13 @@ package org.ujar.amqpconsuminghello;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.metrics.buffering.BufferingApplicationStartup;
 
 @SpringBootApplication
 public class AmqpConsumingHelloApplication {
   public static void main(String[] args) {
-    SpringApplication.run(AmqpConsumingHelloApplication.class, args);
+    SpringApplication springApplication = new SpringApplication(AmqpConsumingHelloApplication.class);
+    springApplication.setApplicationStartup(new BufferingApplicationStartup(2048));
+    springApplication.run(args);
   }
 }
