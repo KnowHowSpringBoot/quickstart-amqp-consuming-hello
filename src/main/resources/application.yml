@@ -29,6 +29,8 @@ spring :
     livereload :
       enabled : false
 logging :
+  pattern :
+    level : '%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]'
   level :
     ROOT : ${LOGGING_LEVEL_ROOT:INFO}
 
@@ -36,18 +38,47 @@ management :
   info :
     env :
       enabled : true
+    java :
+      enabled : true
+    os :
+      enabled : true
   health :
     livenessstate :
       enabled : true
     readinessstate :
       enabled : true
   server :
+    port : ${MANAGEMENT_SERVER_PORT:8080}
     add-application-context-header : true
+
+  metrics :
+    tags :
+      application : ${spring.application.name}
+      profiles : ${spring.profiles.active}
+    distribution :
+      percentiles-histogram :
+        http :
+          server :
+            requests : true
+  tracing :
+    sampling :
+      probability : 1.0
+    enabled : true
+  prometheus :
+    metrics :
+      export :
+        step : 20s
+        enabled: true
+  zipkin :
+    tracing :
+      endpoint : ${TEMPO_URL:http://localhost:9411/api/v2/spans}
+
+
   endpoints :
     enabled-by-default : false
     web :
       exposure :
-        include : health, prometheus, info
+        include : health, metrics, prometheus, info, env
   endpoint :
     health :
       enabled : true
@@ -56,12 +87,18 @@ management :
         enabled : true
     info :
       enabled : true
+    env :
+      enabled : true
+      show-values : always
     prometheus :
       enabled : true
 
 server :
   port : ${SERVER_PORT:8080}
   shutdown : graceful
+  forward-headers-strategy : framework
+  tomcat:
+    redirect-context-root : false
 
 embedded :
   rabbitmq :
@@ -71,7 +108,7 @@ embedded :
 ujar :
   build :
     description : '@project.description@'
-    relative-path : ${SWAGGER_UI_RELATIVE_PATH:}
+    relative-path : ${SERVER_SERVLET_CONTEXT_PATH:/}
     version : '@project.version@'
   amqp :
     queues :
