@@ -8,7 +8,7 @@ Minimal Spring Boot based sample AMQP consumer app.
 - Clone source code to the local machine:
 
 ```
-git clone https://github.com/ujar-org/quickstart-amqp-consuming-hello.git
+git clone https://github.com/uJarOrg/quickstart-amqp-consuming-hello.git
 
 cd quickstart-amqp-consuming-hello
 ```
