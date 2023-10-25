@@ -22,6 +22,10 @@ spring :
     port : ${RABBITMQ_PORT:5672}
     username : ${RABBITMQ_USERNAME:svc_testing}
     password : ${RABBITMQ_PASSWORD:svc_testing}
+  amqp :
+    deserialization :
+      trust :
+        all : true
   devtools :
     add-properties : false
     restart :
