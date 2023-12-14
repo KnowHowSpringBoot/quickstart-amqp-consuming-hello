@@ -9,7 +9,7 @@ management :
   endpoints :
     enabled-by-default : true
 
-ujar :
+iqkv :
   amqp :
     queues :
       greeter-exchange : greeter-exchange
