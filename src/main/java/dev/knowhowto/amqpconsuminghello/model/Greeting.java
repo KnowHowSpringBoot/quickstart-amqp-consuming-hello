@@ -1,4 +1,4 @@
-package org.ujar.amqpconsuminghello.model;
+package dev.knowhowto.amqpconsuminghello.model;
 
 import java.io.Serial;
 import java.io.Serializable;

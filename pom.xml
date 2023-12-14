@@ -3,7 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.ujar</groupId>
+    <groupId>dev.knowhowto</groupId>
     <artifactId>quickstart-amqp-consuming-hello</artifactId>
     <version>23.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
@@ -18,12 +18,12 @@
         </license>
     </licenses>
     <organization>
-        <name>uJar Bootcamp</name>
-        <url>https://www.ujar.org</url>
+        <name>KnowHowSpringBoot Bootcamp</name>
+        <url>https://knowhowto.dev</url>
     </organization>
     <developers>
         <developer>
-            <id>1</id>
+            <id>dimdnk</id>
             <name>Dima Denysenko</name>
             <email>coding@dimdnk.com</email>
             <roles>
@@ -33,7 +33,7 @@
     </developers>
 
     <parent>
-        <groupId>org.ujar.boot</groupId>
+        <groupId>org.iqkv.boot</groupId>
         <artifactId>boot-parent-pom</artifactId>
         <version>23.0.0-SNAPSHOT</version>
     </parent>
@@ -46,16 +46,16 @@
         <sonar.coverage.exclusions>**/*Config*.java,**/*Properties.java,**/*Test.java,**/Test*.java</sonar.coverage.exclusions>
         <checkstyle.skip>false</checkstyle.skip>
         <maven.gitcommitid.skip>false</maven.gitcommitid.skip>
-        <start-class>org.ujar.amqpconsuminghello.AmqpConsumingHelloApplication</start-class>
+        <start-class>dev.knowhowto.amqpconsuminghello.AmqpConsumingHelloApplication</start-class>
     </properties>
 
     <dependencies>
         <dependency>
-            <groupId>org.ujar.boot</groupId>
+            <groupId>org.iqkv.boot</groupId>
             <artifactId>boot-starter-amqp</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.ujar.boot</groupId>
+            <groupId>org.iqkv.boot</groupId>
             <artifactId>boot-starter-observability</artifactId>
         </dependency>
         <dependency>
