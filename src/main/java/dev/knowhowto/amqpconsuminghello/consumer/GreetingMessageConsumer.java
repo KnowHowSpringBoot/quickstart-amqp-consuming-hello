@@ -1,12 +1,12 @@
-package org.ujar.amqpconsuminghello.consumer;
+package dev.knowhowto.amqpconsuminghello.consumer;
 
 import java.util.concurrent.CountDownLatch;
 
+import dev.knowhowto.amqpconsuminghello.model.Greeting;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
-import org.ujar.amqpconsuminghello.model.Greeting;
 
 @Component
 @RequiredArgsConstructor
