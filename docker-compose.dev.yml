@@ -3,7 +3,7 @@ version : '3.8'
 services :
   rabbitmq :
     container_name : quickstart-amqp-dev-consuming-hello-rabbitmq
-    image : rabbitmq:3.12-management-alpine
+    image : rabbitmq:management-alpine
     restart : unless-stopped
     environment :
       - RABBITMQ_DEFAULT_USER=svc_testing
