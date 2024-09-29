@@ -33,7 +33,7 @@
     </developers>
 
     <parent>
-        <groupId>org.iqkv.boot</groupId>
+        <groupId>com.iqkv.boot</groupId>
         <artifactId>boot-parent-pom</artifactId>
         <version>24.0.0-SNAPSHOT</version>
     </parent>
@@ -51,11 +51,11 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.iqkv.boot</groupId>
+            <groupId>com.iqkv.boot</groupId>
             <artifactId>boot-starter-amqp</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.iqkv.boot</groupId>
+            <groupId>com.iqkv.boot</groupId>
             <artifactId>boot-starter-observability</artifactId>
         </dependency>
         <dependency>
