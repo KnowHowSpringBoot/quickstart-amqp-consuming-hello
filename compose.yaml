@@ -1,8 +1,8 @@
 # This configuration is intended for dev purpose
-version : '3.8'
+name : dev-quickstart-amqp-consuming-hello
 services :
   rabbitmq :
-    container_name : quickstart-amqp-dev-consuming-hello-rabbitmq
+    container_name : dev-quickstart-amqp-consuming-hello-rabbitmq
     image : rabbitmq:management-alpine
     restart : unless-stopped
     environment :
@@ -14,7 +14,7 @@ services :
       # HTTP management UI
       - '15672:15672'
   prometheus :
-    container_name : quickstart-amqp-dev-consuming-hello-prometheus
+    container_name : dev-quickstart-amqp-consuming-hello-prometheus
     image : prom/prometheus:v2.54.1
     volumes :
       - ./src/main/docker/prometheus/:/etc/prometheus/
@@ -24,7 +24,7 @@ services :
     # docker/grafana/provisioning/datasources/datasource.yml
     network_mode : 'host' # to test locally running service
   grafana :
-    container_name : quickstart-amqp-dev-consuming-hello-grafana
+    container_name : dev-quickstart-amqp-consuming-hello-grafana
     image : grafana/grafana:11.2.0
     volumes :
       - ./src/main/docker/grafana/provisioning/:/etc/grafana/provisioning/
